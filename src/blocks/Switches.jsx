@@ -23,4 +23,7 @@ const Switches = ({className}) => {
 
 export default styled(Switches)`
   margin-bottom: 20px;
+  button{
+    margin: 5px;
+  }
 `;

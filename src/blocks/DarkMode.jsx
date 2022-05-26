@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ThemeContext, ThemeDark, ThemeLight } from "../context/ThemeContext";
 import { BiMoon, BiSun } from "react-icons/bi";
 import styled from 'styled-components';
@@ -14,9 +14,24 @@ const ButtonToggle = styled.button`
 
 const DarkMode = () =>{
   const [theme, setTheme] = useContext(ThemeContext);
+
+  const verificationTheme = () => theme.type === 'light' ? ThemeLight : ThemeDark ;
+
   const handleChangeTheme = () =>{
-    setTheme(theme.type === 'light' ? ThemeDark : ThemeLight )
+    window.localStorage.setItem('theme', JSON.stringify(verificationTheme()));
+    setTheme(verificationTheme());
   }
+
+
+  useEffect(()=>{
+    if(window.localStorage.getItem('theme')){
+      const themeDB = JSON.parse(window.localStorage.getItem('theme'));
+      setTheme(themeDB);
+    }else{
+      setTheme(verificationTheme());
+    }
+  },[]);
+
   return (
     <ButtonToggle
       theme={theme}   

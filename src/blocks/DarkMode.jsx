@@ -15,7 +15,7 @@ const ButtonToggle = styled.button`
 const DarkMode = () =>{
   const [theme, setTheme] = useContext(ThemeContext);
 
-  const verificationTheme = () => theme.type === 'light' ? ThemeLight : ThemeDark ;
+  const verificationTheme = () => theme.type === 'light' ? ThemeDark : ThemeLight;
 
   const handleChangeTheme = () =>{
     window.localStorage.setItem('theme', JSON.stringify(verificationTheme()));

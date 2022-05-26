@@ -186,7 +186,7 @@ Error generating stack: `+o.message+`
   color: ${e=>e.theme&&e.theme.colors&&e.theme.colors.text};
   background-color: ${e=>e.theme&&e.theme.colors&&e.theme.colors.background};
   cursor: pointer;
-`,v0=()=>{const[e,t]=ue.exports.useContext(Yn),n=()=>e.type==="light"?cs:Jm,r=()=>{window.localStorage.setItem("theme",JSON.stringify(n())),t(n())};return ue.exports.useEffect(()=>{if(window.localStorage.getItem("theme")){const l=JSON.parse(window.localStorage.getItem("theme"));t(l)}else t(n())},[]),Z(m0,{theme:e,onClick:r,children:e.type==="light"?Z(p0,{}):Z(h0,{})})},y0=({className:e})=>be("div",{className:e,children:[be("p",{children:["Gracias por visitar esta p\xE1gina \xA9 ",new Date().getFullYear()]}),Z(v0,{})]});var g0=fe(y0)`
+`,v0=()=>{const[e,t]=ue.exports.useContext(Yn),n=()=>e.type==="light"?Jm:cs,r=()=>{window.localStorage.setItem("theme",JSON.stringify(n())),t(n())};return ue.exports.useEffect(()=>{if(window.localStorage.getItem("theme")){const l=JSON.parse(window.localStorage.getItem("theme"));t(l)}else t(n())},[]),Z(m0,{theme:e,onClick:r,children:e.type==="light"?Z(p0,{}):Z(h0,{})})},y0=({className:e})=>be("div",{className:e,children:[be("p",{children:["Gracias por visitar esta p\xE1gina \xA9 ",new Date().getFullYear()]}),Z(v0,{})]});var g0=fe(y0)`
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
